@@ -63,7 +63,7 @@ class ControllerExtensionPaymentBillplz extends Controller
         $collection_id = $this->config->get('payment_billplz_collection_id_value');
 
         $deliver = $_SESSION['delivery'];
-        $name = $_SESSION['name'];
+        $name = empty(trim($_SESSION['name'])) ? 'NAME' : $_SESSION['name'];
         $email = $_SESSION['email'];
         $description = $_SESSION['description'];
         $mobile = $_SESSION['mobile'];
