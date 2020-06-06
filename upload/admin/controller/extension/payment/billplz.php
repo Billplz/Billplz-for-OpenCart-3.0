@@ -135,9 +135,9 @@ class ControllerExtensionPaymentBillplz extends Controller
         }
 
         if (isset($this->request->post['billplz_pending_status_id'])) {
-            $data['billplz_pending_status_id'] = $this->request->post['billplz_pending_status_id'];
+            $data['billplz_pending_status_id'] = $this->request->post['payment_billplz_pending_status_id'];
         } else {
-            $data['billplz_pending_status_id'] = $this->config->get('billplz_pending_status_id');
+            $data['billplz_pending_status_id'] = $this->config->get('payment_billplz_pending_status_id');
         }
 
         $this->load->model('localisation/order_status');

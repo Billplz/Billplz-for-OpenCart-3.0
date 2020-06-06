@@ -6,9 +6,9 @@ class ModelExtensionPaymentBillplz extends Model
     {
         $this->load->language('extension/payment/billplz');
 
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone_to_geo_zone WHERE geo_zone_id = '" . (int)$this->config->get('billplz_geo_zone_id') . "' AND country_id = '" . (int)$address['country_id'] . "' AND (zone_id = '" . (int)$address['zone_id'] . "' OR zone_id = '0')");
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone_to_geo_zone WHERE geo_zone_id = '" . (int)$this->config->get('payment_billplz_geo_zone_id') . "' AND country_id = '" . (int)$address['country_id'] . "' AND (zone_id = '" . (int)$address['zone_id'] . "' OR zone_id = '0')");
 
-        if ($this->config->get('payment_billplz_total') > 0 && $this->config->get('billplz_total') > $total) {
+        if ($this->config->get('payment_billplz_total') > 0 && $this->config->get('payment_billplz_total') > $total) {
             $status = false;
         } elseif (!$this->config->get('payment_billplz_geo_zone_id')) {
             $status = true;
