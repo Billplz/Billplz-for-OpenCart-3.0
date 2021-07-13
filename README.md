@@ -16,6 +16,20 @@ Accept payment using Billplz for OpenCart 3.0
 2. OpenCart 3.0.x
 3. Not compatible with older version of OpenCart 3.0
 
+## Extras
+
+`deploy.sh` file contains:
+
+```bash
+#!/bin/bash
+
+cp -r upload/* <full path to installation directory>
+
+# example
+# cp -r upload/* /var/www/mywebsite.com/public_html
+
+``` 
+
 # Other
 
 Facebook: [Billplz Dev Jam](https://www.facebook.com/groups/billplzdevjam/)
