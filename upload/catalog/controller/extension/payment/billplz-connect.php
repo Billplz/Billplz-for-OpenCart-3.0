@@ -284,12 +284,8 @@ class BillplzConnect
          * Convert paid status to boolean
          */
         $data['paid'] = $data['paid'] === 'true' ? true : false;
-        /*
-         * Convert paid status to boolean
-         */
-        $data['paid'] = $data['paid'] === 'true' ? true : false;
 
-        $signedString = hash_hmac('sha256', $signingString, $x_signature_key);
+        $signedString = hash_hmac('sha256', $signing, $x_signature_key);
 
         if ($data['x_signature'] === $signedString) {
             $data['type'] = $type;
