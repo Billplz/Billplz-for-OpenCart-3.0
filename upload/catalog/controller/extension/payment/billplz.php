@@ -103,7 +103,7 @@ class ControllerExtensionPaymentBillplz extends Controller
         }
 
         if (!$data['paid']){
-            $this->redirect($this->url->link('checkout/checkout'));
+            $this->redirect($this->url->link('checkout/failure'));
         }
 
         $bill_id = $data['id'];
